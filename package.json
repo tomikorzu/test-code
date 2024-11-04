@@ -24,10 +24,18 @@
   },
   "contributors": [],
   "scripts": {
-    "dev": "nodemon ./index.js",
+    "dev": "nodemon ./express-validator/index.js",
     "test": ""
   },
   "devDependencies": {
     "nodemon": "^3.1.7"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "express-validator": "^7.2.0",
+    "jsonwebtoken": "^9.0.2",
+    "sqlite3": "^5.1.7"
   }
 }
