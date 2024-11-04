@@ -11,10 +11,11 @@ import userPayload from "../middlewares/userPayload.js";
 
 // Validations
 import validateRegister from "../middlewares/validations/register.js";
+import validateLogin from "../middlewares/validations/login.js";
 
 const router = express.Router();
 
-router.post("/login", login);
+router.post("/login", validateLogin, login);
 router.post("/register", validateRegister, register);
 router.patch("/change-psw/:id", verifyToken, userPayload, changePassword);
 

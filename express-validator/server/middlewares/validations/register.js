@@ -9,20 +9,18 @@ const validateRegister = [
     .withMessage("Username must be at least 4 characters long")
     .isLength({ max: 20 })
     .withMessage("Username must be at most 20 characters long")
-    .isString()
-    .withMessage("Username must contain only letters and numbers")
     .custom((value) => {
       return new Promise((resolve, reject) => {
         db.get(
-          `SELECT * FROM users WHERE username = ?`,
+          `SELECT username FROM users WHERE username = ?`,
           [value],
           (err, user) => {
             if (err) {
-              reject(new Error("There was an error server"));
+              reject({ message: "There was an error server", code: 500 });
             }
 
             if (user) {
-              reject(new Error("Username is already in use"));
+              reject({ message: "Username is already in use", code: 409 });
             }
 
             resolve(true);
@@ -37,13 +35,13 @@ const validateRegister = [
     .withMessage("Invalid email format")
     .custom((value) => {
       return new Promise((resolve, reject) => {
-        db.get("SELECT * FROM users WHERE email = ?", [value], (err, user) => {
+        db.get("SELECT email FROM users WHERE email = ?", [value], (err, user) => {
           if (err) {
-            reject(new Error("Database error"));
+            reject({ message: "There was an error server", code: 500 });
           }
 
           if (user) {
-            reject(new Error("Email is already in use"));
+            reject({ message: "Email is already in use", code: 409 });
           }
 
           resolve(true);

@@ -14,16 +14,25 @@ const register = (req, res) => {
       return value.msg;
     });
 
+    const messages = validations.map((msg) => {
+      return msg.message;
+    });
+    const statusCode = validations.map((msg) => {
+      return msg.code;
+    });
+
     let firstValidation = validations[0];
 
     if (validations.length > 0) {
-      return res.status(400).json({
-        message: validations,
+      return res.status(statusCode[0]).json({
+        message: messages[0],
       });
+      // return res.status(400).json({message: validations})
     }
+
   }
 
-  const hashedPassword = bcrypt.hashSync(password, 10);
+  const hashedPassword = bcrypt.hash(password, 10);
 
   db.run(
     "INSERT INTO users (username, email, password, fullname, role) VALUES (?, ?, ?, ?, ?)",
