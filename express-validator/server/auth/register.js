@@ -10,20 +10,19 @@ const register = (req, res) => {
   const errors = validationResult(req);
 
   if (!errors.isEmpty()) {
-    const validations = errors.array().map((err) => {
-      return {
-        param: err.param,
-        msg: err.msg,
-        location: err.location,
-      };
+    const validations = errors.array().map((value) => {
+      return value.msg;
     });
+
+    let firstValidation = validations[0];
 
     if (validations.length > 0) {
       return res.status(400).json({
-        validations,
+        message: validations,
       });
     }
   }
+
   const hashedPassword = bcrypt.hashSync(password, 10);
 
   db.run(

@@ -7,6 +7,10 @@ const validateRegister = [
     .withMessage("Username can not be empty")
     .isLength({ min: 4 })
     .withMessage("Username must be at least 4 characters long")
+    .isLength({ max: 20 })
+    .withMessage("Username must be at most 20 characters long")
+    .isString()
+    .withMessage("Username must contain only letters and numbers")
     .custom((value) => {
       return new Promise((resolve, reject) => {
         db.get(
@@ -54,10 +58,10 @@ const validateRegister = [
   body("fullname")
     .notEmpty()
     .withMessage("Fullname can not be empty")
-    .isString()
-    .withMessage("Fullname cannot be a number")
     .isLength({ min: 4 })
-    .withMessage("Fullname must be at least 4 characters long"),
+    .withMessage("Fullname must be at least 4 characters long")
+    .isLength({ max: 50 })
+    .withMessage("Fullname must be at most 50 characters long"),
 ];
 
 export default validateRegister;
