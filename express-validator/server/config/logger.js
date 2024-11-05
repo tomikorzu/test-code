@@ -18,9 +18,9 @@ const custom = {
 };
 
 const logger = winston.createLogger({
-  level: "info",
+  levels: custom.levels,
   format: combine(
-    timestamp(),
+    timestamp({ format: "HH:mm:ss" }),
     json(),
     prettyPrint(),
     errors({ stack: true }),
@@ -28,17 +28,24 @@ const logger = winston.createLogger({
   ),
   defaultMeta: { service: "user-service" },
   transports: [
-    new winston.transports.Console(),
+    new winston.transports.Console({
+      level: "http",
+    }),
     new winston.transports.File({
       filename: "./express-validator/server/logs/error.log",
       level: "error",
+    }),
+    new winston.transports.File({
+      filename: "./express-validator/server/logs/info.log",
+      level: "info",
+    }),
+    new winston.transports.File({
+      filename: "./express-validator/server/logs/all.log",
+      level: "http",
     }),
   ],
 });
 
 winston.addColors(custom.colors);
-
-logger.info("Hello world");
-logger.error("Error message");
 
 export default logger;

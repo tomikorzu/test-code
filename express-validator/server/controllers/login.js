@@ -3,6 +3,8 @@ import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
 import { validationResult } from "express-validator";
 
+import logger from "../config/logger.js";
+
 dotenv.config();
 
 const secretKey = process.env.SECRET_KEY;
