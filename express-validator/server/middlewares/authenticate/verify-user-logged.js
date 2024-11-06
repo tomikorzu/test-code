@@ -1,9 +1,6 @@
 import jwt from "jsonwebtoken";
-import dotenv from "dotenv";
 
 import responses from "../../utils/show-response.js";
-
-dotenv.config();
 
 const secretKey = process.env.SECRET_KEY;
 

@@ -40,3 +40,21 @@
 [34m  service: 'user-service',[39m
 [34m  timestamp: '09:24:03'[39m
 [34m}[39m
+[34m{[39m
+[34m  message: 'POST / /users/login',[39m
+[34m  level: 'http',[39m
+[34m  service: 'user-service',[39m
+[34m  timestamp: '11:04:25'[39m
+[34m}[39m
+[34m{[39m
+[34m  message: 'PATCH / /users/change-password/1',[39m
+[34m  level: 'http',[39m
+[34m  service: 'user-service',[39m
+[34m  timestamp: '11:04:33'[39m
+[34m}[39m
+[34m{[39m
+[34m  message: 'PATCH / /users/change-password/1',[39m
+[34m  level: 'http',[39m
+[34m  service: 'user-service',[39m
+[34m  timestamp: '11:04:47'[39m
+[34m}[39m
