@@ -1,26 +1,28 @@
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
 
+import responses from "../../utils/show-response.js";
+
 dotenv.config();
 
 const secretKey = process.env.SECRET_KEY;
 
-const verifyToken = (req, res, next) => {
+const verifyUserLogged = (req, res, next) => {
   const token = req.headers.authorization;
 
   if (!token) {
-    res.status(400).json({ message: "You are not logged" });
+    return responses.badRequest(res, "You are not logged");
   }
 
   const onlyToken = token.split(" ")[1];
 
   jwt.verify(onlyToken, secretKey, (err, decoded) => {
     if (err) {
-      res.status(401).json({ message: "Invalid token" });
+      return responses.unauthorized(res, "Invalid token");
     }
     req.user = decoded;
     next();
   });
 };
 
-export default verifyToken;
+export default verifyUserLogged;

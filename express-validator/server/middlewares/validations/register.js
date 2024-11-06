@@ -1,18 +1,16 @@
 import { body } from "express-validator";
-import db from "../../config/users-db.js";
+import db from "../../config/db/users-db.js";
 
 const validateRegister = [
   body("username")
     .trim()
     .escape()
     .notEmpty()
-    .withMessage("Username can not be empty")
+    .withMessage("Username cannot be empty")
     .isAlphanumeric()
     .withMessage("Username can only contain letters and numbers")
-    .isLength({ min: 4 })
-    .withMessage("Username must be at least 4 characters long")
-    .isLength({ max: 20 })
-    .withMessage("Username must be at most 20 characters long")
+    .isLength({ min: 4, max: 20 })
+    .withMessage("Username must be between 4 and 20 characters")
     .custom((value) => {
       return new Promise((resolve, reject) => {
         db.get(
@@ -36,7 +34,7 @@ const validateRegister = [
     .normalizeEmail()
     .trim()
     .notEmpty()
-    .withMessage("Email can not be empty")
+    .withMessage("Email cannot be empty")
     .isEmail()
     .withMessage("Invalid email format")
     .custom((value) => {
@@ -61,18 +59,24 @@ const validateRegister = [
   body("password")
     .trim()
     .notEmpty()
-    .withMessage("Password can not be empty")
-    .isLength({ min: 8 })
-    .withMessage("Password must be at least 8 characters long"),
+    .withMessage("Password cannot be empty")
+    .isLength({ min: 8, max: 40 })
+    .withMessage("Password must be between 8 and 30 characters long")
+    .matches(/\d/)
+    .withMessage("Password must contain at least one number")
+    .matches(/[A-Z]/)
+    .withMessage("Password must contain at least one uppercase letter")
+    .matches(/[!@#\$%\^&\*]/)
+    .withMessage(
+      "Password must contain at least one special character (!@#$%^&*)"
+    ),
   body("fullname")
     .trim()
     .escape()
     .notEmpty()
-    .withMessage("Fullname can not be empty")
-    .isLength({ min: 4 })
-    .withMessage("Fullname must be at least 4 characters long")
-    .isLength({ max: 50 })
-    .withMessage("Fullname must be at most 50 characters long")
+    .withMessage("Fullname cannot be empty")
+    .isLength({ min: 4, max: 50 })
+    .withMessage("Fullname must be between 4 and 50 characters")
     .matches(/^[a-zA-Z\s]+$/)
     .withMessage("Fullname must only contain letters and spaces"),
 ];

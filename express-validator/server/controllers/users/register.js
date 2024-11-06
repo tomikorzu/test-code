@@ -1,10 +1,11 @@
-import db from "../config/users-db.js";
+import db from "../../config/db/users-db.js";
 import bcrypt from "bcrypt";
 import { validationResult } from "express-validator";
 
-import roles from "../constants/roles.js";
+import roles from "../../constants/roles.js";
+import responses from "../../utils/show-response.js";
 
-const register = (req, res) => {
+const register = async (req, res) => {
   const { username, email, password, fullname } = req.body;
 
   const errors = validationResult(req);
@@ -24,24 +25,24 @@ const register = (req, res) => {
     let firstValidation = validations[0];
 
     if (validations.length > 0) {
-      // return res.status(statusCode[0]).json({
-      //   message: messages[0],
-      // });
-      return res.status(400).json({ message: validations });
+      return res.status(statusCode[0]).json({
+        message: messages[0],
+      });
+      // return responses.badRequest(res, validations)
     }
   }
 
-  const hashedPassword = bcrypt.hash(password, 10);
+  const hashedPassword = await bcrypt.hash(password, 10);
 
   db.run(
     "INSERT INTO users (username, email, password, fullname, role) VALUES (?, ?, ?, ?, ?)",
-    [username, email, hashedPassword, fullname, roles.employee],
+    [username, email, hashedPassword, fullname, roles.student],
     (err) => {
       if (err) {
-        return res.status(500).json({ error: "Error registering user" });
+        return responses.serverError(res);
       }
 
-      res.status(201).json({ message: "User registered successfully" });
+      responses.created(res, "User registered successfully");
     }
   );
 };

@@ -1,25 +1,31 @@
-import dotenv from "dotenv";
 import jwt from "jsonwebtoken";
+import dotenv from "dotenv";
+
+import responses from "../../utils/show-response.js";
 
 dotenv.config();
 
 const secretKey = process.env.SECRET_KEY;
 
 const userPayload = (req, res, next) => {
-  const authHeader = req.headers["authorization"];
+  const authHeader = req.headers.authorization;
+
   if (!authHeader)
-    return res.status(401).json({ error: "Se requiere un token de acceso" });
+    return responses.badRequest(res, "The access token is required");
 
   const token = authHeader.split(" ")[1];
 
   jwt.verify(token, secretKey, (err, decoded) => {
-    if (err) return res.status(403).json({ error: "Token inválido" });
+    if (err) return responses.unauthorized(res, "Invalid Token");
+
     req.user = {
       id: decoded.id,
     };
+
     if (decoded.id != req.params.id) {
-      return res.status(403).json({ message: "Use not authorized" });
+      return responses.forbidden(res, "User not authorized");
     }
+
     next();
   });
 };
