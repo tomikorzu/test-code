@@ -22,8 +22,6 @@ const register = async (req, res) => {
       return msg.code || 400;
     });
 
-    let firstValidation = validations[0];
-
     if (validations.length > 0) {
       return res.status(statusCode[0]).json({
         message: messages[0],

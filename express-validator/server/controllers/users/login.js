@@ -15,19 +15,19 @@ const login = (req, res) => {
   const errors = validationResult(req);
 
   if (!errors.isEmpty()) {
+    
     const validations = errors.array().map((value) => {
       return value.msg;
     });
 
+    
     const messages = validations.map((msg) => {
       return msg.message || msg;
     });
     const statusCode = validations.map((msg) => {
       return msg.code || 400;
     });
-
-    let firstValidation = validations[0];
-
+    
     if (validations.length > 0) {
       return res.status(statusCode[0]).json({
         message: messages[0],

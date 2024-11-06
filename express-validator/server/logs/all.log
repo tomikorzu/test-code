@@ -1,0 +1,42 @@
+[34m{[39m
+[34m  message: 'POST / /users/register',[39m
+[34m  level: 'http',[39m
+[34m  service: 'user-service',[39m
+[34m  timestamp: '09:22:40'[39m
+[34m}[39m
+[34m{[39m
+[34m  message: 'POST / /users/login',[39m
+[34m  level: 'http',[39m
+[34m  service: 'user-service',[39m
+[34m  timestamp: '09:22:44'[39m
+[34m}[39m
+[34m{[39m
+[34m  message: 'POST / /users/login',[39m
+[34m  level: 'http',[39m
+[34m  service: 'user-service',[39m
+[34m  timestamp: '09:22:53'[39m
+[34m}[39m
+[34m{[39m
+[34m  message: 'POST / /users/login',[39m
+[34m  level: 'http',[39m
+[34m  service: 'user-service',[39m
+[34m  timestamp: '09:23:00'[39m
+[34m}[39m
+[34m{[39m
+[34m  message: 'PATCH / /users/change-password/1',[39m
+[34m  level: 'http',[39m
+[34m  service: 'user-service',[39m
+[34m  timestamp: '09:23:54'[39m
+[34m}[39m
+[34m{[39m
+[34m  message: 'PATCH / /users/change-password/1',[39m
+[34m  level: 'http',[39m
+[34m  service: 'user-service',[39m
+[34m  timestamp: '09:23:57'[39m
+[34m}[39m
+[34m{[39m
+[34m  message: 'PATCH / /users/change-password/1',[39m
+[34m  level: 'http',[39m
+[34m  service: 'user-service',[39m
+[34m  timestamp: '09:24:03'[39m
+[34m}[39m

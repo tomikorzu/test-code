@@ -12,6 +12,7 @@ import changePassword from "../controllers/users/change-password.js";
 // Validations
 import validateRegister from "../middlewares/validations/register.js";
 import validateLogin from "../middlewares/validations/login.js";
+import validateChangePassword from "../middlewares/validations/changePassword.js";
 
 const router = express.Router();
 
@@ -21,6 +22,7 @@ router.patch(
   "/change-password/:id",
   verifyUserLogged,
   userPayload,
+  validateChangePassword,
   changePassword
 );
 
