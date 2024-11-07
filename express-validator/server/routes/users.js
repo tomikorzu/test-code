@@ -16,6 +16,9 @@ import validateChangePassword from "../middlewares/validations/changePassword.js
 
 const router = express.Router();
 
+router.get("/", verifyUserLogged, userPayload, (req, res) => {
+  res.status(200).json([]);
+});
 router.post("/register", validateRegister, register);
 router.post("/login", validateLogin, login);
 router.patch(

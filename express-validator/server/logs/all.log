@@ -58,3 +58,249 @@
 [34m  service: 'user-service',[39m
 [34m  timestamp: '11:04:47'[39m
 [34m}[39m
+[34m{[39m
+[34m  message: 'GET / /users',[39m
+[34m  level: 'http',[39m
+[34m  service: 'user-service',[39m
+[34m  timestamp: '10:04:01'[39m
+[34m}[39m
+[34m{[39m
+[34m  message: 'GET / /users',[39m
+[34m  level: 'http',[39m
+[34m  service: 'user-service',[39m
+[34m  timestamp: '10:26:57'[39m
+[34m}[39m
+[34m{[39m
+[34m  message: 'POST / /register',[39m
+[34m  level: 'http',[39m
+[34m  service: 'user-service',[39m
+[34m  timestamp: '10:35:20'[39m
+[34m}[39m
+[34m{[39m
+[34m  message: 'POST / /addUsers',[39m
+[34m  level: 'http',[39m
+[34m  service: 'user-service',[39m
+[34m  timestamp: '10:38:10'[39m
+[34m}[39m
+[34m{[39m
+[34m  message: 'POST / /addUsers',[39m
+[34m  level: 'http',[39m
+[34m  service: 'user-service',[39m
+[34m  timestamp: '10:38:27'[39m
+[34m}[39m
+[34m{[39m
+[34m  message: 'POST / /addUsers',[39m
+[34m  level: 'http',[39m
+[34m  service: 'user-service',[39m
+[34m  timestamp: '10:40:09'[39m
+[34m}[39m
+[34m{[39m
+[34m  message: 'POST / /addUsers',[39m
+[34m  level: 'http',[39m
+[34m  service: 'user-service',[39m
+[34m  timestamp: '10:40:09'[39m
+[34m}[39m
+[34m{[39m
+[34m  message: 'POST / /addUsers',[39m
+[34m  level: 'http',[39m
+[34m  service: 'user-service',[39m
+[34m  timestamp: '10:41:12'[39m
+[34m}[39m
+[34m{[39m
+[34m  message: 'POST / /addUsers',[39m
+[34m  level: 'http',[39m
+[34m  service: 'user-service',[39m
+[34m  timestamp: '10:41:12'[39m
+[34m}[39m
+[34m{[39m
+[34m  message: 'POST / /addUsers',[39m
+[34m  level: 'http',[39m
+[34m  service: 'user-service',[39m
+[34m  timestamp: '10:41:23'[39m
+[34m}[39m
+[34m{[39m
+[34m  message: 'POST / /addUsers',[39m
+[34m  level: 'http',[39m
+[34m  service: 'user-service',[39m
+[34m  timestamp: '10:41:23'[39m
+[34m}[39m
+[34m{[39m
+[34m  message: 'POST / /addUsers',[39m
+[34m  level: 'http',[39m
+[34m  service: 'user-service',[39m
+[34m  timestamp: '10:41:47'[39m
+[34m}[39m
+[34m{[39m
+[34m  message: 'POST / /addUsers',[39m
+[34m  level: 'http',[39m
+[34m  service: 'user-service',[39m
+[34m  timestamp: '10:41:47'[39m
+[34m}[39m
+[34m{[39m
+[34m  message: 'POST / /addUsers',[39m
+[34m  level: 'http',[39m
+[34m  service: 'user-service',[39m
+[34m  timestamp: '10:41:59'[39m
+[34m}[39m
+[34m{[39m
+[34m  message: 'POST / /addUsers',[39m
+[34m  level: 'http',[39m
+[34m  service: 'user-service',[39m
+[34m  timestamp: '10:41:59'[39m
+[34m}[39m
+[34m{[39m
+[34m  message: 'POST / /addUsers',[39m
+[34m  level: 'http',[39m
+[34m  service: 'user-service',[39m
+[34m  timestamp: '10:45:41'[39m
+[34m}[39m
+[34m{[39m
+[34m  message: 'POST / /addUsers',[39m
+[34m  level: 'http',[39m
+[34m  service: 'user-service',[39m
+[34m  timestamp: '10:45:41'[39m
+[34m}[39m
+[34m{[39m
+[34m  message: 'POST / /addUsers',[39m
+[34m  level: 'http',[39m
+[34m  service: 'user-service',[39m
+[34m  timestamp: '10:45:41'[39m
+[34m}[39m
+[34m{[39m
+[34m  message: 'POST / /users/register',[39m
+[34m  level: 'http',[39m
+[34m  service: 'user-service',[39m
+[34m  timestamp: '10:55:36'[39m
+[34m}[39m
+[34m{[39m
+[34m  message: 'POST / /addUsers',[39m
+[34m  level: 'http',[39m
+[34m  service: 'user-service',[39m
+[34m  timestamp: '10:55:36'[39m
+[34m}[39m
+[34m{[39m
+[34m  message: 'POST / /addUsers',[39m
+[34m  level: 'http',[39m
+[34m  service: 'user-service',[39m
+[34m  timestamp: '10:55:36'[39m
+[34m}[39m
+[34m{[39m
+[34m  message: 'POST / /users/register',[39m
+[34m  level: 'http',[39m
+[34m  service: 'user-service',[39m
+[34m  timestamp: '10:56:20'[39m
+[34m}[39m
+[34m{[39m
+[34m  message: 'POST / /addUsers',[39m
+[34m  level: 'http',[39m
+[34m  service: 'user-service',[39m
+[34m  timestamp: '10:56:20'[39m
+[34m}[39m
+[34m{[39m
+[34m  message: 'POST / /users/register',[39m
+[34m  level: 'http',[39m
+[34m  service: 'user-service',[39m
+[34m  timestamp: '10:56:45'[39m
+[34m}[39m
+[34m{[39m
+[34m  message: 'POST / /users/register',[39m
+[34m  level: 'http',[39m
+[34m  service: 'user-service',[39m
+[34m  timestamp: '10:56:45'[39m
+[34m}[39m
+[34m{[39m
+[34m  message: 'POST / /users/register',[39m
+[34m  level: 'http',[39m
+[34m  service: 'user-service',[39m
+[34m  timestamp: '10:57:23'[39m
+[34m}[39m
+[34m{[39m
+[34m  message: 'POST / /users/register',[39m
+[34m  level: 'http',[39m
+[34m  service: 'user-service',[39m
+[34m  timestamp: '10:57:23'[39m
+[34m}[39m
+[34m{[39m
+[34m  message: 'POST / /users/register',[39m
+[34m  level: 'http',[39m
+[34m  service: 'user-service',[39m
+[34m  timestamp: '10:57:33'[39m
+[34m}[39m
+[34m{[39m
+[34m  message: 'POST / /users/register',[39m
+[34m  level: 'http',[39m
+[34m  service: 'user-service',[39m
+[34m  timestamp: '10:57:33'[39m
+[34m}[39m
+[34m{[39m
+[34m  message: 'POST / /addUsers',[39m
+[34m  level: 'http',[39m
+[34m  service: 'user-service',[39m
+[34m  timestamp: '11:02:09'[39m
+[34m}[39m
+[34m{[39m
+[34m  message: 'POST / /addUsers',[39m
+[34m  level: 'http',[39m
+[34m  service: 'user-service',[39m
+[34m  timestamp: '11:02:09'[39m
+[34m}[39m
+[34m{[39m
+[34m  message: 'POST / /addUsers',[39m
+[34m  level: 'http',[39m
+[34m  service: 'user-service',[39m
+[34m  timestamp: '11:12:39'[39m
+[34m}[39m
+[34m{[39m
+[34m  message: 'POST / /addUsers',[39m
+[34m  level: 'http',[39m
+[34m  service: 'user-service',[39m
+[34m  timestamp: '11:14:24'[39m
+[34m}[39m
+[34m{[39m
+[34m  message: 'POST / /addUsers',[39m
+[34m  level: 'http',[39m
+[34m  service: 'user-service',[39m
+[34m  timestamp: '11:24:11'[39m
+[34m}[39m
+[34m{[39m
+[34m  message: 'POST / /addUsers',[39m
+[34m  level: 'http',[39m
+[34m  service: 'user-service',[39m
+[34m  timestamp: '11:24:11'[39m
+[34m}[39m
+[34m{[39m
+[34m  message: 'POST / /addUsers',[39m
+[34m  level: 'http',[39m
+[34m  service: 'user-service',[39m
+[34m  timestamp: '11:24:24'[39m
+[34m}[39m
+[34m{[39m
+[34m  message: 'POST / /addUsers',[39m
+[34m  level: 'http',[39m
+[34m  service: 'user-service',[39m
+[34m  timestamp: '11:24:24'[39m
+[34m}[39m
+[34m{[39m
+[34m  message: 'GET / /users',[39m
+[34m  level: 'http',[39m
+[34m  service: 'user-service',[39m
+[34m  timestamp: '11:27:57'[39m
+[34m}[39m
+[34m{[39m
+[34m  message: 'GET / /users',[39m
+[34m  level: 'http',[39m
+[34m  service: 'user-service',[39m
+[34m  timestamp: '11:29:52'[39m
+[34m}[39m
+[34m{[39m
+[34m  message: 'POST / /users/register',[39m
+[34m  level: 'http',[39m
+[34m  service: 'user-service',[39m
+[34m  timestamp: '11:40:29'[39m
+[34m}[39m
+[34m{[39m
+[34m  message: 'POST / /users/register',[39m
+[34m  level: 'http',[39m
+[34m  service: 'user-service',[39m
+[34m  timestamp: '11:40:33'[39m
+[34m}[39m

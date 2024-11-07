@@ -1,5 +1,6 @@
 import "dotenv/config";
 import express from "express";
+import morgan from "morgan"
 
 // Routes
 import userRoutes from "./server/routes/users.js";
@@ -13,11 +14,14 @@ const PORT = process.env.PORT;
 
 app.use(express.json());
 
-app.use(requestLogger);
+// app.use(requestLogger);
 app.use(errorsLogger);
+app.use(morgan("dev"))
 
 app.use("/users", userRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server running in http://localhost:${PORT}`);
 });
+
+export default app;
