@@ -1,5 +1,6 @@
 import { body } from "express-validator";
-import db from "../../config/db/users-db.js";
+
+import registerValidDB from "../../services/validations/register-validationsDB.js";
 
 const validateRegister = [
   body("username")
@@ -11,25 +12,7 @@ const validateRegister = [
     .withMessage("Username can only contain letters and numbers")
     .isLength({ min: 4, max: 20 })
     .withMessage("Username must be between 4 and 20 characters")
-    .custom((value) => {
-      return new Promise((resolve, reject) => {
-        db.get(
-          `SELECT username FROM users WHERE username = ?`,
-          [value],
-          (err, user) => {
-            if (err) {
-              reject({ message: "There was an error server", code: 500 });
-            }
-
-            if (user) {
-              reject({ message: "Username is already in use", code: 409 });
-            }
-
-            resolve(true);
-          }
-        );
-      });
-    }),
+    .custom((value) => registerValidDB.searchUsername(value)),
   body("email")
     .normalizeEmail()
     .trim()
@@ -37,25 +20,7 @@ const validateRegister = [
     .withMessage("Email cannot be empty")
     .isEmail()
     .withMessage("Invalid email format")
-    .custom((value) => {
-      return new Promise((resolve, reject) => {
-        db.get(
-          "SELECT email FROM users WHERE email = ?",
-          [value],
-          (err, user) => {
-            if (err) {
-              reject({ message: "There was an error server", code: 500 });
-            }
-
-            if (user) {
-              reject({ message: "Email is already in use", code: 409 });
-            }
-
-            resolve(true);
-          }
-        );
-      });
-    }),
+    .custom((value) => registerValidDB.searchEmail(value)),
   body("password")
     .trim()
     .notEmpty()

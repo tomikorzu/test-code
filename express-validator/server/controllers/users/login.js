@@ -1,45 +1,22 @@
-import db from "../../config/db/users-db.js";
 import jwt from "jsonwebtoken";
-import { validationResult } from "express-validator";
 
 import responses from "../../utils/show-response.js";
+import showErrors from "../../middlewares/validations/errorValidations.js";
+
+import getIdByEmail from "../../services/controllers/getIdByEmail.js";
 
 const secretKey = process.env.SECRET_KEY;
 
-const login = (req, res) => {
-  const { email, password } = req.body;
+const login = async (req, res) => {
+  const { email } = req.body;
 
-  const errors = validationResult(req);
+  if (showErrors(req, res)) return;
 
-  if (!errors.isEmpty()) {
-    const validations = errors.array().map((value) => {
-      return value.msg;
-    });
+  const result = await getIdByEmail(res, email);
 
-    const messages = validations.map((msg) => {
-      return msg.message || msg;
-    });
-    const statusCode = validations.map((msg) => {
-      return msg.code || 400;
-    });
+  const token = jwt.sign({ email, id: result }, secretKey);
 
-    if (validations.length > 0) {
-      return res.status(statusCode[0]).json({
-        message: messages[0],
-      });
-      // return responses.badRequest(res, validations)
-    }
-  }
-
-  db.get(`SELECT id from users WHERE email = ?`, [email], (err, row) => {
-    if (err) {
-      return responses.serverError(res);
-    }
-
-    const token = jwt.sign({ email, id: row.id }, secretKey);
-
-    responses.success(res, "Login successful", { token, id: row.id });
-  });
+  responses.success(res, "Login successful", { token, id: result });
 };
 
 export default login;
